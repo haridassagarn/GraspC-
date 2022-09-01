@@ -42,3 +42,42 @@ int main(int argc,char* argv[])
   getchar();
  return 0; 
 }
+
+//second example
+int customized(int argc,char* argv[])
+{
+  po::options_description desc("my file processor options");
+  int value;
+  desc.add_options()
+    ("value,v" , po::value<int>(&value)->default_value(55),"input value to process")
+    ("files",po::value<vector<string>>()->multitoken(),"filenames");
+  
+  po::positional_options_description pos;
+  pos.add("files",-1);
+  
+  po::variables_map vm;
+  po::command_line_parser parser(argc,argv);
+  auto parsed_options = parser.options(desc).positional(pos).run();
+  //auto parsed = po::parse_command_line(argc,argv,desc);
+  
+  //po::store(parsed,vm);
+  po::store(parsed_options,vm);
+  po::notify(vm);
+  
+
+  cout << "Value is " << value <<endl;
+
+  if(vm.count("files"))
+  {
+   int i =0;
+    
+    auto files = vm["files"].as<vector<string>>();
+    for(auto f:files)
+    {
+      cout << ++i << " : " << f << endl; 
+    }
+  }
+ 
+  getchar();
+ return 0; 
+}
