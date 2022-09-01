@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <boost/optional.hpp>
 
 
 class Address
@@ -16,6 +17,11 @@ class Person
         string firstname,lastname;
         optional<string> middlename;
         optional<Address> address;
+  
+       optional<string> getname()
+       {
+         return middlename; 
+       }
  };
 
 
