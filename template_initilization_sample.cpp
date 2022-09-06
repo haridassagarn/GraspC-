@@ -28,7 +28,7 @@ class Test
     private:
     Test()
     {
-        
+        T obj;
         cout<< "in test constructor " << endl;
     }
     static Test instance;
