@@ -15,7 +15,7 @@ struct _stack_empty_error: public std::exception{
     
     const char * what() const throw()
     {
-        cout << "ERROR------ stack is empty " << endl;
+        return "ERROR------ stack is empty " ;
     }
     
 };
