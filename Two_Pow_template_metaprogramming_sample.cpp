@@ -12,7 +12,7 @@ struct twopow<0>
 
 int main()
 {
-    cout<<"Hello World " << twopow<8>::val << endl;
+    cout<< twopow<8>::val << endl;
 
     return 0;
 }
