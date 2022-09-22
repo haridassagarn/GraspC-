@@ -24,7 +24,7 @@ template<typename T> void AfunctionTemplate(typename T::ASubtype value) {
 }
 int main()
 {
-    cout<<"Hello World" << endl;
+    
     AfunctionTemplate<AStruct>(200);
     AfunctionTemplate<AStructB>("PARAMETER");
     //AfunctionTemplate(600) this generates compiler error
