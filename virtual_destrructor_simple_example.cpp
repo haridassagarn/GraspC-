@@ -40,4 +40,5 @@ int main()
     Base* bd = new Derived();
     delete bd;
   return 0;
+    
 }
