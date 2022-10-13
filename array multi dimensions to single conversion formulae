@@ -1,0 +1,11 @@
+
+for filling index by index i tried to figure out formuale
+
+
+for b=1:2,m=1:2, l=1:4, k=1:2, i = 1:2, j = 1:4         println(((b-1)*32+(m-1)*16+(l-1)*4+(k-1)*2+i-1)*4+j)end
+
+
+above example is for 6d array [2][2][4][2][2][4]
+
+now i have to figure out how to use it in SArray with unsafe_load
+
